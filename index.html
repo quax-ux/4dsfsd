@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aunt Alex's is very talented</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000000;
+            padding: 20px;
+        }
+        .video-title {
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            color: DarkGrey;
+        }
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        video {
+            width: 100%;
+            max-width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+        .ad-banner-inside {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 320px;
+            height: 50px;
+            background: rgba(255,255,255,0.92);
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            overflow: hidden;
+        }
+        @media (max-width: 400px) {
+            .ad-banner-inside {
+                width: 95vw;
+                height: 40px;
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="video-wrapper" id="videoWrapper">
+                            <video id="miVideo" controls playsinline autoplay preload="auto">
+                    <source src="https://cdn.slicedrive.com/vycBSGme1.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                    </div>
+        
+        <!-- Área de clic que se activa después de 10 segundos -->
+        <div id="clickArea" class="click-area"></div>
+    </div>
+
+    <script>
+                    const elemento = document.getElementById('miVideo');
+                
+        const clickArea = document.getElementById('clickArea');
+        
+        const URL_REDIRECCION = "https://privilegedturmoilanew.com/t966b87sjj?key=05d8d2dea0e0e4ae48569c866fa87bfd";
+        const TIEMPO_REQUERIDO = 10;
+        
+        let tiempoCumplido = false;
+        let yaRedirigido = false;
+        let timerIniciado = false;
+        
+        // ========== ÚNICA SOLUCIÓN: Recargar si viene del botón atrás ==========
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                location.reload();
+            }
+        });
+        
+        // Función para redirigir al anuncio
+        function redirigirAlAnuncio() {
+            if (yaRedirigido) return;
+            yaRedirigido = true;
+            if (URL_REDIRECCION && URL_REDIRECCION !== '#') {
+                window.location.href = URL_REDIRECCION;
+            }
+        }
+        
+        // Redirigir cuando termina el video
+                    elemento.addEventListener('ended', function() {
+                console.log('🎬 Video terminado, redirigiendo...');
+                redirigirAlAnuncio();
+            });
+                
+        // Iniciar el timer de 10 segundos
+        function iniciarTimer() {
+            if (timerIniciado) return;
+            timerIniciado = true;
+            
+            let segundosRestantes = TIEMPO_REQUERIDO;
+            
+            const intervalo = setInterval(() => {
+                if (segundosRestantes > 0) {
+                    segundosRestantes--;
+                    
+                    if (segundosRestantes === 0) {
+                        clearInterval(intervalo);
+                        tiempoCumplido = true;
+                        clickArea.classList.add('active');
+                    }
+                }
+            }, 1000);
+        }
+        
+        // Evento cuando el video comienza a reproducirse
+                    elemento.addEventListener('play', function() {
+                iniciarTimer();
+            });
+            
+            if (!elemento.paused) {
+                iniciarTimer();
+            }
+                
+        // Capturar clics en el área
+        clickArea.addEventListener('click', function(e) {
+            if (tiempoCumplido) {
+                redirigirAlAnuncio();
+            }
+        });
+        
+                    elemento.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+                
+        // Intentar autoplay
+                    elemento.play().catch(function(e) {
+                const msg = document.createElement('div');
+                msg.textContent = '▶️';
+                msg.style.position = 'fixed';
+                msg.style.top = '50%';
+                msg.style.left = '50%';
+                msg.style.transform = 'translate(-50%, -50%)';
+                msg.style.background = 'rgba(0,0,0,0.7)';
+                msg.style.color = 'white';
+                msg.style.width = '60px';
+                msg.style.height = '60px';
+                msg.style.borderRadius = '50%';
+                msg.style.display = 'flex';
+                msg.style.alignItems = 'center';
+                msg.style.justifyContent = 'center';
+                msg.style.fontSize = '30px';
+                msg.style.zIndex = '100';
+                msg.style.cursor = 'pointer';
+                document.body.appendChild(msg);
+                
+                msg.onclick = function() {
+                    elemento.play();
+                    msg.remove();
+                };
+            });
+                
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', function() {
+            history.pushState(null, null, location.href);
+        });
+    </script>
+</a>
+
+</div>
+
+</body>
+</html>
+  
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5018377,4,9,110,60,00011111']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5018377&101" alt="website statistics" border="0"></a></noscript>
+<!-- Histats.com  END  -->
