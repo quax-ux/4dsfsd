@@ -1,199 +1,132 @@
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-us"
+    prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Moment shawty can&#039;t hold her self anymore</title>
-    
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec489a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='25' fill='url(%23grad)'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-weight='bold' font-family='Inter'%3ES%3C/text%3E%3C/svg%3E">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: #000;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            margin: 0;
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+        @charset "UTF-8";
+
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak,
+        .ng-hide:not(.ng-hide-animate) {
+            display: none !important;
         }
-        .player-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-        }
-        .video-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        video, iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+
+        ng\:form {
             display: block;
-            object-fit: contain;
         }
-        
-        /* Área de clic - SOLO se activa después de 10 segundos */
-        .click-area {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            z-index: 10;
-            display: none;
-            cursor: pointer;
+
+        .ng-animate-shim {
+            visibility: hidden;
         }
-        .click-area.active {
-            display: block;
+
+        .ng-anchor {
+            position: absolute;
         }
     </style>
-</head>
-<body>
-    <div class="player-container">
-        <div class="video-wrapper" id="videoWrapper">
-                            <video id="miVideo" controls playsinline autoplay preload="auto">
-                    <source src="https://cdn.slicedrive.com/vycBSGme1.mp4" type="video/mp4">
-                    Tu navegador no soporta el elemento de video.
-                </video>
-                    </div>
-        
-        <!-- Área de clic que se activa después de 10 segundos -->
-        <div id="clickArea" class="click-area"></div>
-    </div>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>This Page Does Not Exist</title>
+    <meta name="description" content="Oops, looks like the page is lost.">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,600,600i,700,700i,800,800i"
+        rel="stylesheet">
 
+    <script type="text/javascript" async=""
+        src="https://www.googletagmanager.com/gtag/js?id=G-9Q6H0QETRF&amp;cx=c&amp;_slc=1"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script>
-                    const elemento = document.getElementById('miVideo');
-                
-        const clickArea = document.getElementById('clickArea');
-        
-        const URL_REDIRECCION = "https://t.co/dXBvJ7yH6O";
-        const TIEMPO_REQUERIDO = 10;
-        
-        let tiempoCumplido = false;
-        let yaRedirigido = false;
-        let timerIniciado = false;
-        
-        // ========== ÚNICA SOLUCIÓN: Recargar si viene del botón atrás ==========
-        window.addEventListener('pageshow', function(event) {
-            if (event.persisted) {
-                location.reload();
-            }
-        });
-        
-        // Función para redirigir al anuncio
-        function redirigirAlAnuncio() {
-            if (yaRedirigido) return;
-            yaRedirigido = true;
-            if (URL_REDIRECCION && URL_REDIRECCION !== '#') {
-                window.location.href = URL_REDIRECCION;
-            }
-        }
-        
-        // Redirigir cuando termina el video
-                    elemento.addEventListener('ended', function() {
-                console.log('🎬 Video terminado, redirigiendo...');
-                redirigirAlAnuncio();
-            });
-                
-        // Iniciar el timer de 10 segundos
-        function iniciarTimer() {
-            if (timerIniciado) return;
-            timerIniciado = true;
-            
-            let segundosRestantes = TIEMPO_REQUERIDO;
-            
-            const intervalo = setInterval(() => {
-                if (segundosRestantes > 0) {
-                    segundosRestantes--;
-                    
-                    if (segundosRestantes === 0) {
-                        clearInterval(intervalo);
-                        tiempoCumplido = true;
-                        clickArea.classList.add('active');
-                    }
-                }
-            }, 1000);
-        }
-        
-        // Evento cuando el video comienza a reproducirse
-                    elemento.addEventListener('play', function() {
-                iniciarTimer();
-            });
-            
-            if (!elemento.paused) {
-                iniciarTimer();
-            }
-                
-        // Capturar clics en el área
-        clickArea.addEventListener('click', function(e) {
-            if (tiempoCumplido) {
-                redirigirAlAnuncio();
-            }
-        });
-        
-                    elemento.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-                
-        // Intentar autoplay
-                    elemento.play().catch(function(e) {
-                const msg = document.createElement('div');
-                msg.textContent = '▶️';
-                msg.style.position = 'fixed';
-                msg.style.top = '50%';
-                msg.style.left = '50%';
-                msg.style.transform = 'translate(-50%, -50%)';
-                msg.style.background = 'rgba(0,0,0,0.7)';
-                msg.style.color = 'white';
-                msg.style.width = '60px';
-                msg.style.height = '60px';
-                msg.style.borderRadius = '50%';
-                msg.style.display = 'flex';
-                msg.style.alignItems = 'center';
-                msg.style.justifyContent = 'center';
-                msg.style.fontSize = '30px';
-                msg.style.zIndex = '100';
-                msg.style.cursor = 'pointer';
-                document.body.appendChild(msg);
-                
-                msg.onclick = function() {
-                    elemento.play();
-                    msg.remove();
-                };
-            });
-                
-        history.pushState(null, null, location.href);
-        window.addEventListener('popstate', function() {
-            history.pushState(null, null, location.href);
-        });
-    </script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-   <script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,5018377,4,9,110,60,00011111']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5018377&101" alt="website statistics" border="0"></a></noscript>
-        </a>
+        ga('create', 'UA-26575989-46', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+    <iframe allow="join-ad-interest-group" data-tagging-id="G-9Q6H0QETRF" data-load-time="1744709464093" height="0"
+        width="0"
+        src="https://td.doubleclick.net/td/ga/rul?tid=G-9Q6H0QETRF&amp;gacid=1669583486.1744709463&amp;gtm=45je54b0v9125959112za200&amp;dma=1&amp;dma_cps=syphamo&amp;gcd=13l3lPl2l2l1&amp;npa=0&amp;pscdl=noapi&amp;aip=1&amp;fledge=1&amp;frm=0&amp;tag_exp=102509683~102803279~102813109~102887800~102926062~103021830~103027016~103051953~103055465~103077950&amp;z=2108504389"
+        style="display: none; visibility: hidden;">
+    </iframe>
+    <div class="page-not-found">
+        <img class="image" alt="Page Not Found" src="/htdocs_error/page_not_found.svg" />
+        <h1 class="title">This Page Does Not Exist</h1>
+        <p class="text">
+            Sorry, the page you are looking for could not be found. It's just an
+            accident that was not intentional.
+        </p>
     </div>
-        
-    </body>
+
+</body>
+<style>
+    body {
+        color: #1d1e20;
+        background: #f4f5ff;
+
+        font-size: 14px;
+        font-family: "DM Sans", "Roboto", sans-serif !important;
+        font-weight: 400;
+        -ms-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page-not-found {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        padding: 0 16px;
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        .image {
+            max-width: 100%;
+            margin-bottom: 32px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .title {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 24px;
+            line-height: 32px;
+            font-weight: 700;
+        }
+
+        .text {
+            text-align: center;
+            max-width: 650px;
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #6D7081;
+        }
+
+
+    }
+</style>
+
 </html>
