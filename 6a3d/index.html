@@ -193,7 +193,65 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5018377&101" alt="website statistics" border="0"></a></noscript>
         </a>
-    </div>
+    </div
+    /* 🔥 Play button FIX */
+.play-button {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* Icon kecil */
+.play-button::before {
+  content: "▶";
+  color: white;
+  font-size: 26px;
+  margin-left: 3px;
+}
+
+/* Hover */
+.video-frame:hover .play-button {
+  background: rgba(0,0,0,0.6);
+  transform: scale(1.05);
+}
+
+/* Klik */
+.video-frame:active .play-button {
+  transform: scale(0.95);
+}
+
+/* Progress */
+.controls {
+  position: absolute;
+  bottom: 15px;
+  width: 90%;
+}
+
+.progress {
+  width: 100%;
+  height: 3px;
+  background: rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.progress::after {
+  content: "";
+  width: 25%;
+  height: 100%;
+  background: white;
+  position: absolute;
+}
+</style>
+</head>
+
+<body>
      <div class="play-button"></div>
 
     <div class="controls">
