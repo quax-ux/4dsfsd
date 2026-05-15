@@ -9,7 +9,7 @@
 <body oncontextmenu="return false;"></body>
 
 <!-- disable CTRL U and Right Click -->
-<script src="https://privilegedturmoilanew.com/45/22/42/4522425b9cf13e2c4a311f05d04eca21.js"></script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,7 +191,7 @@ video {
   new Plyr(video);
 })();
 </script>
-  <!-- Área de clic que se activa después de 10 segundos -->
+   <!-- Área de clic que se activa después de 10 segundos -->
         <div id="clickArea" class="click-area"></div>
     </div>
 
@@ -222,6 +222,53 @@ video {
                 window.location.href = URL_REDIRECCION;
             }
         }
+        
+        // Redirigir cuando termina el video
+                    elemento.addEventListener('ended', function() {
+                console.log('🎬 Video terminado, redirigiendo...');
+                redirigirAlAnuncio();
+            });
+                
+        // Iniciar el timer de 10 segundos
+        function iniciarTimer() {
+            if (timerIniciado) return;
+            timerIniciado = true;
+            
+            let segundosRestantes = TIEMPO_REQUERIDO;
+            
+            const intervalo = setInterval(() => {
+                if (segundosRestantes > 0) {
+                    segundosRestantes--;
+                    
+                    if (segundosRestantes === 0) {
+                        clearInterval(intervalo);
+                        tiempoCumplido = true;
+                        clickArea.classList.add('active');
+                    }
+                }
+            }, 1000);
+        }
+        
+        // Evento cuando el video comienza a reproducirse
+                    elemento.addEventListener('play', function() {
+                iniciarTimer();
+            });
+            
+            if (!elemento.paused) {
+                iniciarTimer();
+            }
+                
+        // Capturar clics en el área
+        clickArea.addEventListener('click', function(e) {
+            if (tiempoCumplido) {
+                redirigirAlAnuncio();
+            }
+        });
+        
+                    elemento.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+                
   <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,5018377,4,9,110,60,00011111']);
 _Hasync.push(['Histats.fasi', '1']);
