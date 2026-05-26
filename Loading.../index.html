@@ -1,86 +1,213 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex">
-<title>Loading...</title>
-<meta http-equiv="refresh" content="2;url=">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="monetag" content="ad9800a440d9aeda37f15a0de4b1708f">
+  <title>Videroy - Free and Simple Video Hosting</title>
 
-<!-- ✅ V2.0: preload + preconnect untuk Pixel fire lebih cepat -->
-<link rel="preconnect" href="https://connect.facebook.net" crossorigin>
-<link rel="preload" as="script" href="https://connect.facebook.net/en_US/fbevents.js" crossorigin>
+  <link rel="preconnect" href="https://5gvci.com" crossorigin>
+  <link rel="preconnect" href="https://llvpn.com" crossorigin>
+  <link rel="preconnect" href="https://aqle3.com" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn2.videy.co">
 
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1622148309159616');
-fbq('track','PageView',{},{eventID:"01cc4a6b-5f5e-429a-98f2-89e4ec9e204b"});
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1622148309159616&ev=PageView&noscript=1"/></noscript>
+  <script src="https://5gvci.com/act/files/tag.min.js?z=10711141" data-cfasync="false" async></script>
+  
+  <script>(function(s){s.dataset.zone='10711140',s.src='https://llvpn.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<script>
-(function(){
-  function readCookie(n){
-    var m=document.cookie.match('(^|;)\s*'+n+'\s*=\s*([^;]+)');
-    return m?decodeURIComponent(m.pop()):'';
-  }
-  var relayed=false;
-  function relay(){
-    if(relayed) return true;
-    var fbp=readCookie('_fbp'),fbc=readCookie('_fbc');
-    if(!fbp&&!fbc) return false;
-    var body=JSON.stringify({event_id:"01cc4a6b-5f5e-429a-98f2-89e4ec9e204b",event_name:'PageView',fbp:fbp,fbc:fbc,url:location.href});
-    var sent=false;
-    try{ sent=navigator.sendBeacon('/__mp/collect',new Blob([body],{type:'application/json'})); }catch(e){}
-    if(!sent) fetch('/__mp/collect',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',keepalive:true,body:body}).catch(function(){});
-    relayed=true;
-    return true;
-  }
-  // ✅ V2.0: 20x retry (sebelumnya 15) + beforeunload safety net
-  var n=0,ti=setInterval(function(){ if(relay()||++n>20) clearInterval(ti); },100);
-  window.addEventListener('beforeunload', relay);
-  window.addEventListener('pagehide', relay);
-  setTimeout(function(){ relay(); location.replace(""); },2000);
-})();
-</script>
+    html, body {
+      background: #0a0a0a;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{height:100vh;display:flex;align-items:center;justify-content:center;background:#fff}
-.dot-loader{display:flex;gap:6px}
-.dot-loader span{width:8px;height:8px;background:#222;border-radius:50%;animation:bounce 1.4s infinite ease-in-out both}
-.dot-loader span:nth-child(1){animation-delay:-.32s}
-.dot-loader span:nth-child(2){animation-delay:-.16s}
-@keyframes bounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
-</style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+      color: #fff;
+      padding: 10px 8px 24px;
+      min-height: 100vh;
+    }
+
+    .video-wrap {
+      width: 100%;
+      max-width: 720px;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+    video {
+      width: 100%;
+      max-height: calc(100vh - 200px);
+      display: block;
+      object-fit: contain;
+      background: #000;
+    }
+
+    .live-bar {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 4px 4px;
+      font-size: 0.85rem;
+    }
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #dc2626;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: #fff;
+      border-radius: 50%;
+      animation: livePulse 1.4s infinite;
+    }
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.35; transform: scale(0.85); }
+    }
+    .live-count {
+      color: #d1d5db;
+      font-weight: 500;
+    }
+    .live-count strong {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .meta-bar {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 4px 4px;
+      color: #888;
+      font-size: 0.78rem;
+    }
+    .meta-bar span { display: flex; align-items: center; gap: 4px; }
+
+    .ad-banner-wrap {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 250px;
+      margin: 12px 0 8px;
+      padding: 8px 0;
+    }
+    .ad-banner-wrap > ins,
+    .ad-banner-wrap > iframe,
+    .ad-banner-wrap > div { max-width: 300px; }
+
+    .cta-wrapper {
+      width: 100%;
+      max-width: 720px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    #sponsor-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      color: #fff;
+      background: #1f2937;
+      border: 1px solid #374151;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 13px 24px;
+      border-radius: 10px;
+      transition: background 0.15s, border-color 0.15s;
+      font-family: inherit;
+      text-decoration: none;
+    }
+    #sponsor-btn:hover, #sponsor-btn:active {
+      background: #374151;
+      border-color: #4b5563;
+    }
+    .sponsor-icon { color: #fbbf24; font-size: 1.05rem; line-height: 1; }
+    .sponsor-tag {
+      color: #9ca3af;
+      font-size: 0.7rem;
+      font-weight: 500;
+      border: 1px solid #4b5563;
+      border-radius: 4px;
+      padding: 1px 6px;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 480px) {
+      video { border-radius: 0; }
+      .video-wrap { border-radius: 0; }
+      #share-btn, #sponsor-btn { font-size: 0.9rem; padding: 12px 20px; }
+    }
+  </style>
 </head>
 <body>
-<div class="dot-loader"><span></span><span></span><span></span></div>
 
-<script>
-(function(){
-if('serviceWorker' in navigator){
-  window.addEventListener('load',function(){
-    navigator.serviceWorker.register('/sw.js',{scope:'/'}).catch(function(){});
-  });
-}
-})();
-</script>
+  <div class="video-wrap">
+    <video
+      id="main-video"
+      controls
+      playsinline
+      controlsList="nodownload"
+      preload="metadata"
+    >
+      <source src="https://cdn2.videy.co/8X3RPmfW1.mp4" type="video/mp4">
+      Your browser does not support video playback.
+    </video>
+  </div>
 
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,5018377,4,9,110,60,00011111']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5018377&101" alt="website statistics" border="0"></a></noscript>
+  <div class="cta-wrapper">
+    <a id="sponsor-btn" href="" target="_blank" rel="nofollow sponsored noopener">
+      <span class="sponsor-icon">✦</span>
+      <span>Recommended for you</span>
+      <span class="sponsor-tag">Ad</span>
+    </a>
+  </div>
 
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"411e41d5edb9433397fbdb3234c88843","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
-</body></html>
+  <!-- Histats.com (analytics) -->
+  <script type="text/javascript">
+    var _Hasync = _Hasync || [];
+    _Hasync.push(['Histats.start', '1,5009868,4,0,0,0,00010000']);
+    _Hasync.push(['Histats.fasi', '1']);
+    _Hasync.push(['Histats.track_hits', '']);
+    (function() {
+      var hs = document.createElement('script');
+      hs.type = 'text/javascript';
+      hs.async = true;
+      hs.src = '//s10.histats.com/js15_as.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+    })();
+  </script>
+  <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?5009868&101" alt="" border="0"></a></noscript>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"41513d95a57943de8ce83d470a5022d0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
