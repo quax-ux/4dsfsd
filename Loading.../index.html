@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Baseball is a game that requires mental toughness and self-confidence</title>
+
+<title>Willow Vibess</title>
 
 <!-- 🔥 DETEKSI AWAL (anti navbar muncul) -->
 <script>
@@ -12,126 +13,18 @@
     document.documentElement.classList.add("watch-mode");
   }
 </script>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%23ec489a'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='25' fill='url(%23grad)'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='white' font-weight='bold' font-family='Inter'%3ES%3C/text%3E%3C/svg%3E">
-    
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background: #000;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-        }
-        .player-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-        }
-        .video-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        video, iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-            object-fit: contain;
-        }
-        </style>
-<link rel="me" href="https://www.blogger.com/profile/08349335569668208117" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-  <div class="logo">videy</div>
-  <div class="nav-right">
-    <a href="#">Sign Up</a>
-    <a href="#" class="upload-btn">Upload</a>
-  </div>
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>Upload your videos</h1>
-  <h2>and share</h2>
-  <p>Free and simple video hosting.</p>
-  <button>Upload Video</button>
-</div>
-
-<!-- PLAYER -->
-<div class="plyr-container">
-  <video id="player" playsinline controls>
-    <source id="videoSource" src="" type="video/mp4">
-  </video>
-</div>
-
-<script>
-(function () {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
-
-  if (!id) return;
-
-  // validasi id
-  if (!/^[a-zA-Z0-9]+$/.test(id)) {
-    document.body.innerHTML =
-      '<div class="error"><h2>Video tidak ditemukan</h2></div>';
-    return;
-  }
-
-  const videoUrl = "https://cdn2.slicedrive.com/" + id + ".mp4";
-
-  const source = document.getElementById("videoSource");
-  source.src = videoUrl;
-
-  const video = document.getElementById("player");
-
-  video.onerror = function () {
-    document.body.innerHTML =
-      '<div class="error"><h2>Video gagal dimuat</h2><p>Cek ID atau server.</p></div>';
+<div style="text-align: center;">
+    <script>
+  atOptions = {
+    'key' : 'e464be9a618f0ab3208915a8a1c578a4',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
   };
-
-  video.load();
-  new Plyr(video);
-})();
 </script>
-    
-        /* Área de clic - SOLO se activa después de 10 segundos */
-        .click-area {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            z-index: 10;
-            display: none;
-            cursor: pointer;
-        }
-        .click-area.active {
-            display: block;
-        }
-    </style>
-</head>
-<body>
+<script src="https://privilegedturmoilanew.com/e464be9a618f0ab3208915a8a1c578a4/invoke.js"></script>
+</div>
 <style>
 body, html {
   margin: 0;
@@ -231,119 +124,67 @@ video {
 .watch-mode .plyr-container {
   display: flex !important;
 }
-        
-        <!-- Área de clic que se activa después de 10 segundos -->
-        <div id="clickArea" class="click-area"></div>
-    </div>
+</style>
 
-    <script>
-                    const elemento = document.getElementById('miVideo');
-                
-        const clickArea = document.getElementById('clickArea');
-        
-        const URL_REDIRECCION = "https://t.co/fBQacUpen1";
-        const TIEMPO_REQUERIDO = 10;
-        
-        let tiempoCumplido = false;
-        let yaRedirigido = false;
-        let timerIniciado = false;
-        
-        // ========== ÚNICA SOLUCIÓN: Recargar si viene del botón atrás ==========
-        window.addEventListener('pageshow', function(event) {
-            if (event.persisted) {
-                location.reload();
-            }
-        });
-        
-        // Función para redirigir al anuncio
-        function redirigirAlAnuncio() {
-            if (yaRedirigido) return;
-            yaRedirigido = true;
-            if (URL_REDIRECCION && URL_REDIRECCION !== '#') {
-                window.location.href = URL_REDIRECCION;
-            }
-        }
-        
-        // Redirigir cuando termina el video
-                    elemento.addEventListener('ended', function() {
-                console.log('🎬 Video terminado, redirigiendo...');
-                redirigirAlAnuncio();
-            });
-                
-        // Iniciar el timer de 10 segundos
-        function iniciarTimer() {
-            if (timerIniciado) return;
-            timerIniciado = true;
-            
-            let segundosRestantes = TIEMPO_REQUERIDO;
-            
-            const intervalo = setInterval(() => {
-                if (segundosRestantes > 0) {
-                    segundosRestantes--;
-                    
-                    if (segundosRestantes === 0) {
-                        clearInterval(intervalo);
-                        tiempoCumplido = true;
-                        clickArea.classList.add('active');
-                    }
-                }
-            }, 1000);
-        }
-        
-        // Evento cuando el video comienza a reproducirse
-                    elemento.addEventListener('play', function() {
-                iniciarTimer();
-            });
-            
-            if (!elemento.paused) {
-                iniciarTimer();
-            }
-                
-        // Capturar clics en el área
-        clickArea.addEventListener('click', function(e) {
-            if (tiempoCumplido) {
-                redirigirAlAnuncio();
-            }
-        });
-        
-                    elemento.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-                
-        // Intentar autoplay
-                    elemento.play().catch(function(e) {
-                const msg = document.createElement('div');
-                msg.textContent = '▶︎';
-                msg.style.position = 'fixed';
-                msg.style.top = '50%';
-                msg.style.left = '50%';
-                msg.style.transform = 'translate(-50%, -50%)';
-                msg.style.background = 'rgba(0,0,0,0.7)';
-                msg.style.color = 'white';
-                msg.style.width = '60px';
-                msg.style.height = '60px';
-                msg.style.borderRadius = '50%';
-                msg.style.display = 'flex';
-                msg.style.alignItems = 'center';
-                msg.style.justifyContent = 'center';
-                msg.style.fontSize = '30px';
-                msg.style.zIndex = '100';
-                msg.style.cursor = 'pointer';
-                document.body.appendChild(msg);
-                
-                msg.onclick = function() {
-                    elemento.play();
-                    msg.remove();
-                };
-            });
-                
-        history.pushState(null, null, location.href);
-        window.addEventListener('popstate', function() {
-            history.pushState(null, null, location.href);
-        });
-    </script>
+</head>
 
-   <script type="text/javascript">var _Hasync= _Hasync|| [];
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">videy</div>
+  <div class="nav-right">
+    <a href="#">Sign Up</a>
+    <a href="#" class="upload-btn">Upload</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Upload your videos</h1>
+  <h2>and share</h2>
+  <p>Free and simple video hosting.</p>
+  <button>Upload Video</button>
+</div>
+
+<!-- PLAYER -->
+<div class="plyr-container">
+  <video id="player" playsinline controls>
+    <source id="videoSource" src="" type="video/mp4">
+  </video>
+</div>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) return;
+
+  // validasi id
+  if (!/^[a-zA-Z0-9]+$/.test(id)) {
+    document.body.innerHTML =
+      '<div class="error"><h2>Video tidak ditemukan</h2></div>';
+    return;
+  }
+
+  const videoUrl = "https://cdn2.slicedrive.com/" + id + ".mp4";
+
+  const source = document.getElementById("videoSource");
+  source.src = videoUrl;
+
+  const video = document.getElementById("player");
+
+  video.onerror = function () {
+    document.body.innerHTML =
+      '<div class="error"><h2>Video gagal dimuat</h2><p>Cek ID atau server.</p></div>';
+  };
+
+  video.load();
+  new Plyr(video);
+})();
+</script>
+  <script type="text/javascript">var _Hasync= _Hasync|| [];
 _Hasync.push(['Histats.start', '1,5018377,4,9,110,60,00011111']);
 _Hasync.push(['Histats.fasi', '1']);
 _Hasync.push(['Histats.track_hits', '']);
@@ -355,6 +196,5 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5018377&101" alt="website statistics" border="0"></a></noscript>
         </a>
     </div>
-        
-    </body>
+</body>
 </html>
