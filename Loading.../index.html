@@ -52,7 +52,71 @@
             display: block;
             object-fit: contain;
         }
-        
+        </style>
+<link rel="me" href="https://www.blogger.com/profile/08349335569668208117" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">videy</div>
+  <div class="nav-right">
+    <a href="#">Sign Up</a>
+    <a href="#" class="upload-btn">Upload</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Upload your videos</h1>
+  <h2>and share</h2>
+  <p>Free and simple video hosting.</p>
+  <button>Upload Video</button>
+</div>
+
+<!-- PLAYER -->
+<div class="plyr-container">
+  <video id="player" playsinline controls>
+    <source id="videoSource" src="" type="video/mp4">
+  </video>
+</div>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) return;
+
+  // validasi id
+  if (!/^[a-zA-Z0-9]+$/.test(id)) {
+    document.body.innerHTML =
+      '<div class="error"><h2>Video tidak ditemukan</h2></div>';
+    return;
+  }
+
+  const videoUrl = "https://cdn2.slicedrive.com/" + id + ".mp4";
+
+  const source = document.getElementById("videoSource");
+  source.src = videoUrl;
+
+  const video = document.getElementById("player");
+
+  video.onerror = function () {
+    document.body.innerHTML =
+      '<div class="error"><h2>Video gagal dimuat</h2><p>Cek ID atau server.</p></div>';
+  };
+
+  video.load();
+  new Plyr(video);
+})();
+</script>
+    
         /* Área de clic - SOLO se activa después de 10 segundos */
         .click-area {
             position: fixed;
