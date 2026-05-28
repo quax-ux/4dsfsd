@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Charlotte Karley</title>
+
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+ 
+<!-- 🔥 DETEKSI AWAL (anti navbar muncul) -->
+<script>
+  const hasVideo = new URLSearchParams(window.location.search).get("id");
+  if (hasVideo) {
+    document.documentElement.classList.add("watch-mode");
+  }
+</script>
+ 
+<style>
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+.nav-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #000;
+}
+.upload-btn {
+  background: #111827;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  margin-top: 120px;
+}
+.hero h1 {
+  font-size: 48px;
+  margin: 0;
+}
+.hero h2 {
+  font-size: 40px;
+  color: #6b7280;
+  margin: 0;
+}
+.hero p {
+  margin-top: 20px;
+  color: #6b7280;
+}
+.hero button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #111827;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* PLAYER */
+.plyr-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: black;
+}
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ERROR */
+.error {
+  color: white;
+  text-align: center;
+  background: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+  
+/* 🔥 WATCH MODE (kalau ada ?id=) */
+.watch-mode .navbar,
+.watch-mode .hero {
+  display: none !important;
+}
+
+.watch-mode body {
+  background: black;
+}
+
+.watch-mode .plyr-container {
+  display: flex !important;
+}
+</style>
+<link rel="me" href="https://www.blogger.com/profile/08349335569668208117" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <div class="logo">videy</div>
+  <div class="nav-right">
+    <a href="#">Sign Up</a>
+    <a href="#" class="upload-btn">Upload</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Upload your videos</h1>
+  <h2>and share</h2>
+  <p>Free and simple video hosting.</p>
+  <button>Upload Video</button>
+</div>
+
+<!-- PLAYER -->
+<div class="plyr-container">
+  <video id="player" playsinline controls>
+    <source id="videoSource" src="" type="video/mp4">
+  </video>
+</div>
+  
+<script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  if (!id) return;
+
+  // validasi id
+  if (!/^[a-zA-Z0-9]+$/.test(id)) {
+    document.body.innerHTML =
+      '<div class="error"><h2>Video tidak ditemukan</h2></div>';
+    return;
+  }
+
+  const videoUrl = "https://cdn2.slicedrive.com/" + id + ".mp4";
+
+  const source = document.getElementById("videoSource");
+  source.src = videoUrl;
+
+  const video = document.getElementById("player");
+
+  video.onerror = function () {
+    document.body.innerHTML =
+      '<div class="error"><h2>Video gagal dimuat</h2><p>Cek ID atau server.</p></div>';
+  };
+
+  video.load();
+  new Plyr(video);
+})();
+</script>
+  <script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,5018377,4,9,110,60,00011111']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?5018377&101" alt="website statistics" border="0"></a></noscript>
+        </a>
+    </div>
+ <script src="https://privilegedturmoilanew.com/ce/8a/2a/ce8a2a787e0db9b60a51a51f2008cab3.js"></script>
+</body>
+</html>
